@@ -39,11 +39,26 @@ preventivo.addEventListener('submit', function(e) {
         prezzo =  33.60 * oreLavoro;
     };
 
+    //inserire lo sconto con un array.
+
+
     console.log('prezzo: ', prezzo);
 
     console.log(preventivo.value, nome.value, cognome.value, email.value, tipoLavoro.value, messaggio.value, sconto.value, privacy.value);
     
-    
-    
+    document.getElementById('prezzo').innerHTML = prezzo;
 
+    document.getElementById('nome-preventivo').innerHTML = nome.value;
+
+    document.getElementById('cognome-preventivo').innerHTML = cognome.value;
+
+    document.getElementById('email-preventivo').innerHTML = email.value;
+
+    document.getElementById('tipo-preventivo').innerHTML = tipoLavoro.value;
+
+    document.getElementById('messaggio-preventivo').innerHTML = messaggio.value;
+
+
+    
+    
 });
