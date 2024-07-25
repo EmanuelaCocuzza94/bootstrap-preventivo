@@ -78,17 +78,34 @@
                     <div class="col-6">
                         <button type="submit" class="btn btn-primary">Calcola Preventivo</button> 
                     </div>
-                    <div class="col-6">
-                        <h3>Preventivo</h3>
-                        <ul> Dettagli:
-                          <li>Nome: <span id="nome-preventivo"></span></li>
-                          <li>Cognome:<span id="cognome-preventivo"></span></li>
-                          <li>Email: <span id="email-preventivo"></span></li>
-                          <li>Tipologia di lavoro: <span id="tipo-preventivo"></span></li>
-                          <li>Messaggio: <span id="messaggio-preventivo"></span></li>
-                          <li>Sconto: <span id="sconto-preventivo"></span></li>
-                        </ul>
-                        <p>Calcolo del prezzo: <strong><span id="prezzo"></span></strong></p>
+                    <div class="col-6" style="display: none;" id="tabella-risultato" >
+                      <table>
+                        <h3>Preventivo</h3> 
+                        <tbody>
+                          <h5>Dettagli:</h5>
+                          <tr>
+                            <th scope="row"> Email:</th>
+                            <td><span id="email-preventivo"></span></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Tipologia di lavoro:</th>
+                            <td><span id="tipo-preventivo"></span></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Codice sconto:</th>
+                            <td><span id="sconto-preventivo"></span></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Sconto applicato:</th>
+                            <td><span id="sconto-applicato"></span></td>
+                          </tr>
+                          <tr>
+                            <th scope="row"><strong>Calcolo del prezzo:</strong></th>
+                            <td><strong><span id="prezzo"></span></strong></td>
+                          </tr>
+
+                        </tbody>
+                      </table>
                     </div>
                 </div>
               </form>
@@ -124,7 +141,10 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="home-page-preventivo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
 </html>
+
+
+
