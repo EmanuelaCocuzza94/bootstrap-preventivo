@@ -75,21 +75,32 @@ preventivo.addEventListener('submit', function(e) {
 
     tabellaRisultato.removeAttribute('style');
 
-    //tabellaRisultato.style.display = 'show';
+    if(email.value === '') {
+        document.getElementById('email-preventivo').innerHTML = 'Nessuna email';
+    }else {
+        document.getElementById('email-preventivo').innerHTML = email.value;
+    }
+
+    if(tipoLavoro.value === '') {
+        document.getElementById('tipo-preventivo').innerHTML = 'Nessuna selezione';
+    }else {
+        document.getElementById('tipo-preventivo').innerHTML = tipoLavoro.value;
+    }
+
+    if(sconto.value === '') {
+        document.getElementById('sconto-preventivo').innerHTML = 'Nessuno sconto';
+    }else {
+        document.getElementById('sconto-preventivo').innerHTML = sconto.value;
+    }
 
 
-    
     console.log('prezzo: ', prezzo);
 
    // console.log(preventivo.value, nome.value, cognome.value, email.value, tipoLavoro.value, messaggio.value, sconto.value, privacy.value);
     
-    document.getElementById('prezzo').innerHTML = prezzo.toFixed(2) + '€';
+   document.getElementById('prezzo').innerHTML = prezzo.toFixed(2) + '€';
 
-    document.getElementById('email-preventivo').innerHTML = email.value;
-
-    document.getElementById('tipo-preventivo').innerHTML = tipoLavoro.value;
-
-    document.getElementById('sconto-preventivo').innerHTML = sconto.value;
+   document.getElementById('prezzo-calcolato').innerHTML = prezzo.toFixed(2) + '€';
 
     document.getElementById('sconto-applicato').innerHTML = sconto_applicato;
 

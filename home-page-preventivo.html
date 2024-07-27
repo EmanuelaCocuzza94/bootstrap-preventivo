@@ -32,10 +32,10 @@
         </div>
       </div>
     </nav>
-    
+
     <div class="container">
         <div class="row mt-4">
-            <div class="col-8">
+            <div class="col-md-8 ">
               <div class="d-grid gap-2 d-flex justify-content-between">
                 <h2>Richiesta preventivo</h2>
               </div>
@@ -58,7 +58,7 @@
                 <div class="mb-3">
                   <label for="tipoLavoro" class="form-label">Tipologia di lavoro</label>
                   <select class="form-select" aria-label="Default select example" id="tipoLavoro">
-                    <option>Tipologia di lavoro</option>
+                    <option value="">Tipologia di lavoro</option>
                     <option value="backend">Sviluppo backend</option>
                     <option value="frontend">Sviluppo frontend</option>
                     <option value="analisi">Analisi progettuale</option>
@@ -77,45 +77,22 @@
                     <input class="form-check-input" type="checkbox" value="" id="privacy">
                 </div>
                 <div class="row mt-5 mb-5">
-                    <div class="col-6">
+                    <div class="col-md-6 text-center text-md-start">
                         <button type="submit" class="btn btn-primary">Calcola Preventivo</button> 
                     </div>
-                    <div class="col-6" style="display: none;" id="tabella-risultato" >
-                      <table>
-                        <h3>Preventivo</h3> 
-                        <tbody>
-                          <h5>Dettagli:</h5>
-                          <tr>
-                            <th scope="row"> Email:</th>
-                            <td><span id="email-preventivo"></span></td>
-                          </tr>
-                          <tr>
-                            <th scope="row">Tipologia di lavoro:</th>
-                            <td><span id="tipo-preventivo"></span></td>
-                          </tr>
-                          <tr>
-                            <th scope="row">Codice sconto:</th>
-                            <td><span id="sconto-preventivo"></span></td>
-                          </tr>
-                          <tr>
-                            <th scope="row">Sconto applicato:</th>
-                            <td><span id="sconto-applicato"></span></td>
-                          </tr>
-                          <tr>
-                            <th scope="row"><strong>Calcolo del prezzo:</strong></th>
-                            <td><strong><span id="prezzo"></span></strong></td>
-                          </tr>
-
-                        </tbody>
-                      </table>
+                    <div class="col-md-6 text-center text-md-start mt-4 mt-md-0">
+                      <h3>Prezzo finale</h3>
+                      <p>
+                        <strong><span id="prezzo"></span></strong>
+                      </p>
                     </div>
                 </div>
               </form>
             </div>
-            <div class="col-4">
-                <div class="card" style="width: 18rem;">
+            <div class="col-md-4 text-center text-md-start">
+                <div class="card p-3 order-4">
                     <div class="card-header">
-                        <img src="bootstrap-thumbnail.avif" class="img-fluid" width="300" height="200">
+                        <img src="bootstrap-thumbnail.avif" class="img-fluid">
                     </div>
                     <div class="card-body">
                         <div class="card p-2">
@@ -133,6 +110,40 @@
                         </div>
                     </div>
                 </div>
+                <div class="card p-3 mt-3 mb-5 order-2" style="display: none;" id="tabella-risultato">
+                  <div class="card-header">
+                    <h3>Preventivo calcolato</h3>
+                  </div>
+                  <div class="card-body">
+                    <h5>Dettagli:</h5>
+                    <table>
+                      <tbody>
+                        <tr>
+                          <th scope="row"> Email:</th>
+                          <td><span id="email-preventivo"></span></td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Tipologia di lavoro:</th>
+                          <td><span id="tipo-preventivo"></span></td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Codice sconto:</th>
+                          <td><span id="sconto-preventivo"></span></td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Sconto applicato:</th>
+                          <td><span id="sconto-applicato"></span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="card-footer">
+                    <h4>Prezzo finale:</h4>
+                    <p>
+                      <strong><span id="prezzo-calcolato"></span></strong>
+                    </p>
+                  </div>
+              </div>
             </div>
         </div>
     </div>
