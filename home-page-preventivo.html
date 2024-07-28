@@ -9,6 +9,14 @@
   </head>
   <body>
 
+    <style>
+      /* classe utilities che ho aggiunto per gestire 
+        width 50% solo per schermi da md (768px) a salire
+      */
+      @media (min-width: 768px) {
+        .w-md-50 { width: 50% !important; }
+      }
+    </style>
     <nav class="navbar bg-dark navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="home-page-preventivo.html">
@@ -81,7 +89,7 @@
                         <button type="submit" class="btn btn-primary">Calcola Preventivo</button> 
                     </div>
                     <div class="col-md-6 mt-4 mt-md-0">
-                      <div class="d-flex flex-column align-items-center">
+                      <div class="d-flex flex-column w-md-50 align-items-center">
                         <h3>Prezzo finale</h3>
                         <p><strong><span id="prezzo"></span></strong></p>
                       </div>
