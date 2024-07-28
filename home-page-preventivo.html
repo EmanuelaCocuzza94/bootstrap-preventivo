@@ -34,7 +34,7 @@
     </nav>
 
     <div class="container">
-        <div class="row mt-4">
+        <div class="row mt-4 align-items-start">
             <div class="col-md-8 ">
               <div class="d-grid gap-2 d-flex justify-content-between">
                 <h2>Richiesta preventivo</h2>
@@ -80,17 +80,17 @@
                     <div class="col-md-6 text-center text-md-start">
                         <button type="submit" class="btn btn-primary">Calcola Preventivo</button> 
                     </div>
-                    <div class="col-md-6 text-center text-md-start mt-4 mt-md-0">
-                      <h3>Prezzo finale</h3>
-                      <p>
-                        <strong><span id="prezzo"></span></strong>
-                      </p>
+                    <div class="col-md-6 mt-4 mt-md-0">
+                      <div class="d-flex flex-column align-items-center">
+                        <h3>Prezzo finale</h3>
+                        <p><strong><span id="prezzo"></span></strong></p>
+                      </div>
                     </div>
                 </div>
               </form>
             </div>
-            <div class="col-md-4 text-center text-md-start">
-                <div class="card p-3 order-4">
+            <div class="col-md-4 text-center  text-md-start d-flex flex-md-column-reverse flex-column">
+                <div class="card p-3 order-4 mb-3">
                     <div class="card-header">
                         <img src="bootstrap-thumbnail.avif" class="img-fluid">
                     </div>
@@ -110,11 +110,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="card p-3 mt-3 mb-5 order-2" style="display: none;" id="tabella-risultato">
+                <div class="card p-3 mt-3 mb-5">
                   <div class="card-header">
                     <h3>Preventivo calcolato</h3>
                   </div>
-                  <div class="card-body">
+                  <div class="card-body" style="display: none;" id="tabella-risultato">
                     <h5>Dettagli:</h5>
                     <table>
                       <tbody>
