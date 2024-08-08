@@ -1,25 +1,17 @@
 console.log('Inizio js');
 
-const preventivo = document.getElementById('preventivo');
-
-const nome = document.getElementById('nome');
-
-const cognome = document.getElementById('cognome');
+const formPreventivo = document.getElementById('form-preventivo');
 
 const email = document.getElementById('email');
 
 const tipoLavoro = document.getElementById('tipoLavoro');
 
-const messaggio = document.getElementById('messaggio');
-
 const sconto = document.getElementById('sconto');
-
-const privacy = document.getElementById('privacy');
 
 const tabellaRisultato = document.getElementById('tabella-risultato');
 
 
-preventivo.addEventListener('submit', function(e) {
+formPreventivo.addEventListener('submit', function(e) {
     e.preventDefault();
 
     
@@ -101,12 +93,7 @@ preventivo.addEventListener('submit', function(e) {
    document.getElementById('prezzo').innerHTML = prezzo.toFixed(2) + '€';
 
    document.getElementById('prezzo-calcolato').innerHTML = prezzo.toFixed(2) + '€';
+   
+   document.getElementById('sconto-applicato').innerHTML = sconto_applicato;
 
-    document.getElementById('sconto-applicato').innerHTML = sconto_applicato;
-
-
-
-
-    
-    
 });
