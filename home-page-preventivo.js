@@ -14,11 +14,10 @@ const tabellaRisultato = document.getElementById('tabella-risultato');
 formPreventivo.addEventListener('submit', function(e) {
     e.preventDefault();
 
-    
-    let opzioneSelezionataText = tipoLavoro.options[tipoLavoro.selectedIndex].text;
-
+    //Supponiamo per semplicità che ogni progetto richieda lo stesso numero di ore di lavoro (es: 10 ore).
     const oreLavoro = 10;
     
+    //se l'utente non seleziona un tipo di lavoro il prezzo è uguale a zero.
     let prezzo = 0;
     let sconto_applicato = 0;
     //console.log(prezzo);
@@ -46,25 +45,35 @@ formPreventivo.addEventListener('submit', function(e) {
     
     //caso 1: inserisce un codice sconto sbagliato if (...== 0 && sconto.value != '') 
     //caso 2: non inserisce un codice sconto => quando sconto == 0 (...== 0 && sconto.value == '')
+    //caso 3: inserisce codice sconto valido 
 
-    for (let i = 0 ; i < codiceSconto.length; i++) {
-        console.log(sconto.value)
-        console.log(codiceSconto[i], 'Codice Sconto')
 
-        if(sconto.value === codiceSconto[i]) {
+    if(sconto.value != '') {
+        // significa che l'utente ha scritto 
 
-            sconto_applicato = (prezzo * 25/100);
-            
-            prezzo = prezzo -  sconto_applicato;
+        // ciclo l'array start
+        for (let i = 0 ; i < codiceSconto.length; i++) {
+            console.log(sconto.value)
+            console.log(codiceSconto[i], 'Codice Sconto')
+    
+            if(sconto.value === codiceSconto[i]) {
+                
+                //calcolo lo sconto applicato
+                sconto_applicato = (prezzo * 25/100);
 
+                //ricalcolo prezzo
+                prezzo = prezzo -  sconto_applicato;
+    
+            }
         }
+        // ciclo l'array end
 
     }
 
-    if(sconto_applicato === 0 && sconto.value != '') {
-        sconto_applicato = 'Codice sconto non valido'
-    }
+    //il programma è finito!!
 
+    // stampo i risultati calcolati
+    // grazie alla funzione removeAttribute() rimuovo
     tabellaRisultato.removeAttribute('style');
 
     if(email.value === '') {
@@ -92,7 +101,7 @@ formPreventivo.addEventListener('submit', function(e) {
     
    document.getElementById('prezzo').innerHTML = prezzo.toFixed(2) + '€';
 
-   document.getElementById('prezzo-calcolato').innerHTML = prezzo.toFixed(2) + '€';
+   document.getElementById('prezzo-tabella').innerHTML = prezzo.toFixed(2) + '€';
    
    document.getElementById('sconto-applicato').innerHTML = sconto_applicato;
 
