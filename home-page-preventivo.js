@@ -11,6 +11,46 @@ const sconto = document.getElementById('sconto');
 const tabellaRisultato = document.getElementById('tabella-risultato');
 
 
+//Inizio BONUS
+//array di oggetti in base al tipo di lavoro 
+
+    const lavoroScelto = [
+        {
+            value:"",
+            text:"Seleziona una opzione"
+        },
+        {
+            value:"backend",
+            text:"Sviluppo backend"
+        },
+        {
+            value:"frontend",
+            text:"Sviluppo frontend"
+        },
+        {
+            value:"analisi",
+            text:"Analisi progettuale"
+        },
+
+    ];
+
+    for (let i=0; i<lavoroScelto.length; i ++ ){
+
+        console.log(lavoroScelto[i]);
+
+        // prima creo l'elemento option
+        let option = document.createElement('option'); //createElement(nome_tag) crea un elemento html in questo caso option 
+        option.value = lavoroScelto[i].value;
+        option.innerHTML = lavoroScelto[i].text;
+
+        // aggiungo la option creata alla mia select
+        tipoLavoro.appendChild(option);
+
+    }
+
+//Fine BOUS
+
+
 formPreventivo.addEventListener('submit', function(e) {
     e.preventDefault();
 
