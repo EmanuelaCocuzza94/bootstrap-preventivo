@@ -129,9 +129,11 @@ formPreventivo.addEventListener('submit', function(e) {
     }
 
     if(sconto.value === '') {
-        document.getElementById('sconto-preventivo').innerHTML = 'Nessuno sconto';
-    }else {
-        document.getElementById('sconto-preventivo').innerHTML = sconto.value;
+        document.getElementById('sconto-preventivo').innerHTML = 'Nessuno sconto inserito';
+    } else if( sconto_applicato == 0) {
+        document.getElementById('sconto-preventivo').innerHTML = 'Codice Errato';
+    } else {
+        document.getElementById('sconto-preventivo').innerHTML = sconto.value
     }
 
 
